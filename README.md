@@ -1,16 +1,29 @@
-# mood_tracker
+# Mood Tracker
 
-A new Flutter project to track mood
+A single-screen Flutter web app for logging daily mood. Faces are hand-drawn with `CustomPainter` (no images or emojis). The interface theme — gradient background, glassmorphism cards, text colors — shifts to match your most recent mood.
 
-## Getting Started
+**Live demo:** https://your-app.web.app
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Tap a face to log how you're feeling
+- Horizontal scrollable timeline of recent entries
+- Tap any past entry to replay its animation
+- Three distinct expressions (happy, neutral, sad) — drawn from circles, arcs, and lines
+- Mood-driven theme: the whole UI fades to match the active mood
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Architecture
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **State management:** Riverpod (`StateNotifierProvider` for mutable entry list, `Provider` for derived theme)
+- **Drawing:** `CustomPainter` using `drawCircle`, `drawArc`, `drawLine`
+- **Animation:** `AnimationController` per timeline tile (independent pulse animations) + `AnimatedContainer` for theme transitions
+- **Structure:** feature-first layout (`domain` / `application` / `presentation`)
+
+## Run locally
+
+```bash
+flutter pub get
+flutter run -d chrome
+```
+
+## Project structure
