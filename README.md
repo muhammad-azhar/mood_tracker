@@ -2,6 +2,7 @@
 
 A single-screen Flutter web app for logging daily mood. Faces are hand-drawn with `CustomPainter` (no images or emojis). The interface theme — gradient background, glassmorphism cards, text colors — shifts to match your most recent mood.
 
+**Live Demo:** https://moodtracker-9c719.web.app
 
 ## Features
 
