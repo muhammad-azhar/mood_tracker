@@ -22,9 +22,6 @@ StateNotifierProvider<MoodEntriesNotifier, List<MoodEntry>>(
       (ref) => MoodEntriesNotifier(),
 );
 
-// Tracks which entry id is currently animating (null = none).
-final animatingEntryIdProvider = StateProvider<String?>((ref) => null);
-
 final currentThemeProvider = Provider<MoodTheme>((ref) {
   final entries = ref.watch(moodEntriesProvider);
   if (entries.isEmpty) return restTheme;
